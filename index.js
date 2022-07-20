@@ -82,9 +82,12 @@ operationsButtons.forEach(operation => {
         // Functionality for operators buttons
         if (operation.id == "equals") {
             // When user evaluates expression
-            output.textContent = operate(selOperator, firstNum, secondNum);
-            firstNum = operate(selOperator, firstNum, secondNum);
-            secondNum = "";
+            if (secondNum != "") {
+                // checks if user inputted two nums
+                output.textContent = operate(selOperator, firstNum, secondNum);
+                firstNum = operate(selOperator, firstNum, secondNum);
+                secondNum = "";
+            }
         } else {
             if (secondNum == "") {
                 // first operation
@@ -111,6 +114,25 @@ operationsButtons.forEach(operation => {
 });
 
 
+function periodBtn() {
+    if (subOutput.textContent == "") {
+        // first number to add decimal
+        if (firstNum == "" || (!(firstNum.includes(".")))) {
+            // Adds first decimal or checks for repeated decimal
+            firstNum += ".";
+        }
+        output.textContent = firstNum;
+    } else {
+        // second number to add decimal
+        if (secondNum == "" || (!(secondNum.includes(".")))) {
+            // Adds first decimal or checks for repeated decimal
+            secondNum += ".";
+        }
+        output.textContent = secondNum;
+    }
+    testF.textContent = firstNum; //testing
+    testS.textContent = secondNum; //testing
+}
 
 function add(a, b) {
     // adds two numbers a and b
