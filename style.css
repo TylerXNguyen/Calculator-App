@@ -1,0 +1,67 @@
+body {
+    margin: 0px;
+}
+
+.header {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    padding-top: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.iodisplay {
+
+}
+
+.btns-container {
+    display: flex;
+}
+
+.nums-symbs {
+    display: grid;
+}
+
+.symbs {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.nums1-9 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.operators {
+    display: grid;
+}
+
+.num0-period {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.calculator button {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.calculator #zero {
+    width: 70px;
+    height: 35px;
+}

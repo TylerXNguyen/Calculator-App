@@ -1,0 +1,10 @@
+Calculator-App pseudocode:
+
+Take user click on button and keep as first element while populating output
+Until the user selects an operator keep populating
+When user clicks operator make next number the second element
+(Operator chosen is last operator user selected)
+Continue populating second element until equals button is clicked
+Display output as follows
+
+Add extras (buttons for functionality)
