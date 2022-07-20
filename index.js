@@ -24,9 +24,9 @@ acBtn.addEventListener("click", function() {
     secondDisplay = "";
     output.textContent = firstNum;
     subOutput.textContent = secondDisplay;
-    testF.textContent = "_"; //testing
-    testO.textContent = "_"; //testing
-    testS.textContent = "_"; //testing
+    testF.textContent = ""; //testing
+    testO.textContent = ""; //testing
+    testS.textContent = ""; //testing
 });
 
 const numsButtons = document.querySelectorAll(".nums-btn");
@@ -96,7 +96,11 @@ operationsButtons.forEach(operation => {
             selOperator = operation.id;
         }
         testF.textContent = firstNum; //testing
-        testO.textContent = selOperator; //testing
+        if (operation.id == "equals") {
+            testO.textContent = "_"; // testing 
+        } else {
+            testO.textContent = selOperator; //testing
+        } // testing
         testS.textContent = secondNum; //testing
     });
 });
@@ -135,4 +139,26 @@ function operate(operator, a, b) {
         divide : divide(a, b),
     }
     return operations[operator];
+}
+
+// Displays extra visual button
+const extraVisualBtn = document.querySelector(".extra button");
+document.querySelector(".first").style.display = "none";
+document.querySelector(".op").style.display = "none";
+document.querySelector(".second").style.display = "none";
+function toggleVisual() {
+  var x = document.querySelector(".first");
+  var y = document.querySelector(".op");
+  var z = document.querySelector(".second");
+  if (x.style.display === "block") {
+    extraVisualBtn.style.backgroundColor = "gray";
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "none";
+  } else {
+    extraVisualBtn.style.backgroundColor = "red";
+    x.style.display = "block";
+    y.style.display = "block";
+    z.style.display = "block";
+  }
 }
