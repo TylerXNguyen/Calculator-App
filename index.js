@@ -37,7 +37,6 @@ numsButtons.forEach(num => {
                 }
             }
             output.textContent = firstNum;
-            console.log(firstNum)
         } else {
             // Inputting for second number
             if (secondNum == "") {
@@ -54,7 +53,6 @@ numsButtons.forEach(num => {
                 }
             }
             output.textContent = secondNum;
-            console.log(secondNum)
         }
         
     });
@@ -67,8 +65,9 @@ operationsButtons.forEach(operation => {
         if (operation.id == "equals") {
             // When user evaluates expression
             output.textContent = operate(selOperator, firstNum, secondNum);
-            console.log(operate(selOperator, firstNum, secondNum));
-            console.log(selOperator + " " + firstNum + " " + secondNum);
+            firstNum = operate(selOperator, firstNum, secondNum);
+            secondNum = "";
+            console.log(firstNum + " - " + secondNum)
         } else {
             output.textContent = "0";
             selOperator = operation.id;
