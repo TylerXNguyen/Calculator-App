@@ -33,41 +33,46 @@ const numsButtons = document.querySelectorAll(".nums-btn");
 numsButtons.forEach(num => {
     // Functionality for button numbers
     num.addEventListener("click", function() {
-        if (subOutput.textContent == "") {
-            // When first number hasn't been submitted
-            if (firstNum == "") {
-                // populating first entry under right conditions
-                if (num.id != "zero") {
-                    firstNum = num.id;
-                }
-            } else {
-                // populating second+ entries
-                if (num.id == "zero") {
-                    firstNum += "0";
-                } else {
-                    firstNum += num.id;
-                }
-            }
-            output.textContent = firstNum;
+        if (firstNum.length > 10 || secondNum.length > 10) {
+            // checks for length of input too large
+            subOutput.textContent = "Entry too Large (Max 10 digits)";
         } else {
-            // Inputting for second number
-            if (secondNum == "") {
-                // populating first entry under right conditions
-                if (num.id != "zero") {
-                    secondNum = num.id;
-                }
-            } else {
-                // populating second+ entries
-                if (num.id == "zero") {
-                    secondNum += "0";
+            if (subOutput.textContent == "") {
+                // When first number hasn't been submitted
+                if (firstNum == "") {
+                    // populating first entry under right conditions
+                    if (num.id != "zero") {
+                        firstNum = num.id;
+                    }
                 } else {
-                    secondNum += num.id;
+                    // populating second+ entries
+                    if (num.id == "zero") {
+                        firstNum += "0";
+                    } else {
+                        firstNum += num.id;
+                    }
                 }
+                output.textContent = firstNum;
+            } else {
+                // Inputting for second number
+                if (secondNum == "") {
+                    // populating first entry under right conditions
+                    if (num.id != "zero") {
+                        secondNum = num.id;
+                    }
+                } else {
+                    // populating second+ entries
+                    if (num.id == "zero") {
+                        secondNum += "0";
+                    } else {
+                        secondNum += num.id;
+                    }
+                }
+                output.textContent = secondNum;
             }
-            output.textContent = secondNum;
+            testF.textContent = firstNum; //testing
+            testS.textContent = secondNum; //testing
         }
-        testF.textContent = firstNum; //testing
-        testS.textContent = secondNum; //testing
     });
 });
 
@@ -97,7 +102,7 @@ operationsButtons.forEach(operation => {
         }
         testF.textContent = firstNum; //testing
         if (operation.id == "equals") {
-            testO.textContent = "_"; // testing 
+            testO.textContent = ""; // testing 
         } else {
             testO.textContent = selOperator; //testing
         } // testing
@@ -151,7 +156,7 @@ function toggleVisual() {
   var y = document.querySelector(".op");
   var z = document.querySelector(".second");
   if (x.style.display === "block") {
-    extraVisualBtn.style.backgroundColor = "gray";
+    extraVisualBtn.style.backgroundColor = "white";
     x.style.display = "none";
     y.style.display = "none";
     z.style.display = "none";
