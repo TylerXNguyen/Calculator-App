@@ -18,13 +18,12 @@ body {
 .calculator {
     background-color: antiquewhite;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-flow: column nowrap;
 }
 
 .iodisplay {
-
+    background-color: rgb(251, 255, 14);
 }
 
 .btns-container {
