@@ -5,6 +5,15 @@ let secondDisplay = "";
 
 const subOutput = document.querySelector(".second-display");
 const output = document.querySelector(".iodisplay");
+const testF = document.querySelector(".first"); // testing
+const testO = document.querySelector(".op"); // testing
+const testS = document.querySelector(".second"); // testing
+const opTable = {
+    plus : "+",
+    minus : "−",
+    times : "×",
+    divide : "÷",
+}
 
 const acBtn = document.getElementById("AC");
 acBtn.addEventListener("click", function() {
@@ -15,6 +24,9 @@ acBtn.addEventListener("click", function() {
     secondDisplay = "";
     output.textContent = firstNum;
     subOutput.textContent = secondDisplay;
+    testF.textContent = "_"; //testing
+    testO.textContent = "_"; //testing
+    testS.textContent = "_"; //testing
 });
 
 const numsButtons = document.querySelectorAll(".nums-btn");
@@ -54,7 +66,8 @@ numsButtons.forEach(num => {
             }
             output.textContent = secondNum;
         }
-        
+        testF.textContent = firstNum; //testing
+        testS.textContent = secondNum; //testing
     });
 });
 
@@ -67,12 +80,24 @@ operationsButtons.forEach(operation => {
             output.textContent = operate(selOperator, firstNum, secondNum);
             firstNum = operate(selOperator, firstNum, secondNum);
             secondNum = "";
-            console.log(firstNum + " - " + secondNum)
         } else {
-            output.textContent = "0";
+            if (secondNum == "") {
+                // first operation
+                output.textContent = "0";
+                subOutput.textContent = firstNum + "  " + operation.textContent;
+            } else {
+                // multiple operations
+                subOutput.textContent = firstNum + "  " + opTable[selOperator] + 
+                        " " + secondNum + " =";
+                output.textContent = operate(selOperator, firstNum, secondNum);
+                firstNum = operate(selOperator, firstNum, secondNum);
+                secondNum = "";
+            }
             selOperator = operation.id;
-            subOutput.textContent = firstNum + "  " + operation.textContent;
         }
+        testF.textContent = firstNum; //testing
+        testO.textContent = selOperator; //testing
+        testS.textContent = secondNum; //testing
     });
 });
 
