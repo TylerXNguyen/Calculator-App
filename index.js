@@ -114,7 +114,7 @@ operationsButtons.forEach(operation => {
 });
 
 function plusMinusBtn() {
-    if (subOutput.textContent == "") {
+    if (subOutput.textContent == "" && firstNum != 0) {
         // first number
         if (firstNum[0] == "-") {
             // removes minus
@@ -124,7 +124,7 @@ function plusMinusBtn() {
             firstNum = "-" + firstNum;
         }
         output.textContent = firstNum;
-    } else {
+    } else  if (subOutput.textContent == "" && secondNum != 0) {
         // second number
         if (secondNum[0] == "-") {
             // removes minus
