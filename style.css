@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background: linear-gradient(to bottom, rgb(125, 125, 125), rgb(75, 90, 90))
 }
 
@@ -127,12 +127,12 @@ button {
     cursor: pointer;
 }
 
-button:hover {background-color: rgb(175, 190, 190)}
+button:hover {background-color: rgb(156, 145, 145)}
 
 button:active {
     background-color: rgb(175, 190, 190);
     box-shadow: 0 5px rgb(141, 141, 141);
-    transform: translateY(1px);
+    transform: translateY(2px);
 }
 
 .test {
