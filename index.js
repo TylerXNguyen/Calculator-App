@@ -113,6 +113,45 @@ operationsButtons.forEach(operation => {
     });
 });
 
+function plusMinusBtn() {
+    if (subOutput.textContent == "") {
+        // first number
+        if (firstNum[0] == "-") {
+            // removes minus
+            firstNum = firstNum.substring(1);
+        } else {
+            // adds a minus
+            firstNum = "-" + firstNum;
+        }
+        output.textContent = firstNum;
+    } else {
+        // second number
+        if (secondNum[0] == "-") {
+            // removes minus
+            secondNum = secondNum.substring(1);
+        } else {
+            // adds a minus
+            secondNum = "-" + secondNum;
+        }
+        output.textContent = secondNum;
+    }
+}
+
+function delBtn() {
+    if (subOutput.textContent == "") {
+        // first number
+        if (firstNum.length > 0) {
+            firstNum = firstNum.slice(0, -1);
+            output.textContent = firstNum;
+        }
+    } else {
+        // second number
+        if (secondNum.length > 0) {
+            secondNum = secondNum.slice(0, -1);
+            output.textContent = secondNum;
+        }   
+    }
+}
 
 function periodBtn() {
     if (subOutput.textContent == "") {

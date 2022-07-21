@@ -1,5 +1,7 @@
 body {
     margin: 0px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: linear-gradient(to bottom, rgb(176, 224, 121), rgb(93, 145, 255))
 }
 
 .header {
