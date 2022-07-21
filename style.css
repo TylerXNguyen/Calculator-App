@@ -22,18 +22,24 @@ body {
 }
 
 .calculator {
-    background-color: antiquewhite;
+    background-color: rgb(32, 32, 32);
     display: flex;
     flex-direction: column;
     padding: 14px;
     border-radius: 10px;
 }
 
+.calculator .displays {
+    display: flex;
+    flex-flow: column;
+    width: 270px;
+    padding: 14px;
+}
+
 .second-display,
 .iodisplay {
-    height: 10px;
-    padding: 10px;
-    border-radius: 6px;
+    height: 12px;
+    padding: 12px;
 }
 
 .second-display {
@@ -42,7 +48,7 @@ body {
 }
 
 .iodisplay {
-    background-color: rgb(251, 255, 14);
+    background-color: rgb(251, 255, 250);
     text-align: end;
 }
 
@@ -75,13 +81,26 @@ body {
 }
 
 .calculator button {
-    background-color: black;
     color: white;
     font-size: 28px;
     width: 70px;
     height: 70px;
     border-radius: 5px;
     text-align: center;
+}
+
+.calculator .symbs button {
+    background-color: rgb(211, 211, 211);
+    color: black;
+}
+
+.calculator .nums1-9 button,
+.calculator .num0-period button{
+    background-color: rgb(104, 104, 104);
+}
+
+.calculator .operators button {
+    background-color: orange;
 }
 
 .calculator #zero {
